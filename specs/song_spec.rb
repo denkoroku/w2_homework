@@ -13,5 +13,8 @@ class TestSong < MiniTest::Test
     @song4 = Song.new("Circus", "Britney Spears", 180, "pop")
   end
 
-  
+  def test_can_create_song()
+    assert_equal(Song, @song1.class())
+  end
+
 end

@@ -11,4 +11,8 @@ class TestGuest < MiniTest::Test
     @guest3 = Guest.new("Jenny", 42, 200)
     @guest4 = Guest.new("Jo", 99, 400)
   end
+
+  def test_can_create_guest()
+    assert_equal(Guest, @guest1.class())
+  end
 end

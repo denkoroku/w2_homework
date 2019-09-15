@@ -12,9 +12,21 @@ class Room
     @checked_in_guests.push(guest)
   end
 
+  def check_out_guest(guest)
+    index = @checked_in_guests.index(guest)
+    @checked_in_guests.slice!(index,1)
+  end
+
   def guest_count
     return @checked_in_guests.length
   end
 
+  def song_count
+    return @room_song_list.length
+  end
+
+  def add_song(song)
+    @room_song_list.push(song)
+  end
 
 end
