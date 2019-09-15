@@ -9,7 +9,11 @@ class Room
   end
 
   def check_in_guest(guest)
-    @checked_in_guests.push(guest)
+    if @checked_in_guests.length < @capacity-1
+      @checked_in_guests.push(guest)
+    else
+      return "Sorry the room is full"
+    end
   end
 
   def check_out_guest(guest)

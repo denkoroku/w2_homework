@@ -11,7 +11,7 @@ class TestRoom < MiniTest::Test
     @room1 = Room.new(20,["The Wombles", "Trumptown"])
     @room2 = Room.new(14,["Slide Away"])
     @room3 = Room.new(12,[])
-    @room4 = Room.new(10,[])
+    @room4 = Room.new(1,[])
     @guest1= Guest.new("Gee", 45, 120)
     @guest2= Guest.new("Ethel", 95, 1200)
     @guest3= Guest.new("Fiona", 49, 20)
@@ -38,6 +38,15 @@ class TestRoom < MiniTest::Test
   def test_can_add_song()
     @room1.add_song(@song1)
     assert_equal(1, @room1.song_count)
+  end
+
+  def test_room_full()
+    @room4.check_in_guest(@guest1)
+    assert_equal(0, @room1.guest_count())
+  end
+
+  def test_room_full()
+    assert_equal("Sorry the room is full", @room4.check_in_guest(@guest1))
   end
 
 end
