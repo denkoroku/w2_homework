@@ -4,7 +4,7 @@ class Room
 
   def initialize(capacity, room_song_list)
     @capacity = capacity
-    @room_song_list = []
+    @room_song_list = room_song_list
     @checked_in_guests = []
   end
 
