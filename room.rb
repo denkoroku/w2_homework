@@ -11,6 +11,7 @@ class Room
   def check_in_guest(guest)
     if @checked_in_guests.length < @capacity-1
       @checked_in_guests.push(guest)
+      guest.wallet -=5
     else
       return "Sorry the room is full"
     end
